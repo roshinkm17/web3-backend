@@ -3,13 +3,11 @@ import { ethers } from "ethers";
 
 const verifyMessage = (message: string, signature: string) => {
   const recoveredAddress = ethers.verifyMessage(message, signature);
-  console.log("recoveredAddress", recoveredAddress);
   return ethers.getAddress(recoveredAddress);
 };
 
 export const verifySignature = async (req: Request, res: Response) => {
   try {
-    console.log("req.body", req);
     const { message, signature } = req.body;
 
     if (!message || !signature) {

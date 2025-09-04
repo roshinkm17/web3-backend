@@ -16,6 +16,6 @@ app.use("/api", jsonParser, router);
 app.use("/swagger", serve, setup(swaggerSpec));
 
 app.listen(PORT, () => {
-  console.log(`🚀 Server running on http://localhost:${PORT}`);
-  console.log(`📖 Swagger docs available at http://localhost:${PORT}/swagger`);
+  console.log(`Server running on http://localhost:${PORT}`);
+  console.log(`Swagger docs available at http://localhost:${PORT}/swagger`);
 });
