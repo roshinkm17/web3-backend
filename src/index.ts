@@ -3,14 +3,16 @@ import cors from "cors";
 import { router } from "./routes";
 import { serve, setup } from "swagger-ui-express";
 import { swaggerSpec } from "./swagger";
+import bodyParser from "body-parser";
 
 const app = express();
 const PORT = process.env.PORT || 3000;
 
-app.use(cors());
-app.use(express.json());
+var jsonParser = bodyParser.json();
 
-app.use("/api", router);
+app.use(cors());
+
+app.use("/api", jsonParser, router);
 app.use("/swagger", serve, setup(swaggerSpec));
 
 app.listen(PORT, () => {
