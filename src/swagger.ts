@@ -7,7 +7,6 @@ export const swaggerSpec: OpenAPIV3.Document = {
     version: "1.0.0",
     description: "API to verify Ethereum signatures",
   },
-  servers: [{ url: "http://localhost:3000/api" }],
   paths: {
     "/verify-signature": {
       post: {
